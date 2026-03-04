@@ -9,8 +9,8 @@ export default function Banner({ inProgressCount, resolvedCount }) {
         <div
           className="relative flex-1 rounded-2xl overflow-hidden flex flex-col items-center justify-center py-14"
           style={{
-            background: "linear-gradient(135deg, #7C3AED 0%, #4F46E5 100%)",
-          }}
+            background: "linear-gradient(135deg, #422AD5 0%, #7C3AED 100%)",
+        }}
         >
           {/* Vector Left Bottom */}
           <img
@@ -35,8 +35,8 @@ export default function Banner({ inProgressCount, resolvedCount }) {
         <div
           className="relative flex-1 rounded-2xl overflow-hidden flex flex-col items-center justify-center py-14"
           style={{
-            background: "linear-gradient(135deg, #059669 0%, #10B981 100%)",
-          }}
+            background: "linear-gradient(135deg, #0A8A5A 0%, #16A869 100%)",
+        }}
         >
           {/* Vector Left Bottom */}
           <img

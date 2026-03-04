@@ -56,9 +56,9 @@ export default function Navbar() {
         {/* New Ticket Button */}
         <button
           className="flex items-center gap-2 px-4 py-2 rounded-lg text-white text-sm font-semibold cursor-pointer"
-          style={{
-            background: "linear-gradient(135deg, #7C3AED, #4F46E5)",
-          }}
+         style={{
+            background: "linear-gradient(135deg, #422AD5 0%, #7C3AED 100%)",
+        }}
           onClick={() => handleNavClick("New Ticket")}
         >
           + New Ticket
