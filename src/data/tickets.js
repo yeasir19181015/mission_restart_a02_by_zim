@@ -26,7 +26,7 @@ const tickets = [
       "Customer cannot download their January invoice from the billing section. The download button is not working.",
     customer: "Michael Brown",
     priority: "medium",
-    status: "in-progress",
+    status: "open",
     createdAt: "1/17/2024",
   },
   {
@@ -56,7 +56,7 @@ const tickets = [
       "Customer requested a refund two weeks ago but has not received the amount yet.",
     customer: "Sophia Taylor",
     priority: "medium",
-    status: "in-progress",
+    status: "open",
     createdAt: "1/20/2024",
   },
   {
@@ -86,7 +86,7 @@ const tickets = [
       "Customer wants to enable auto-renewal for their subscription but the toggle is disabled.",
     customer: "Liam Thomas",
     priority: "medium",
-    status: "in-progress",
+    status: "open",
     createdAt: "1/17/2024",
   },
   {
