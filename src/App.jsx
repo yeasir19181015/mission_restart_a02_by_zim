@@ -1,7 +1,6 @@
 
 // import './App.css'
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ticketsData from "./data/tickets";
@@ -9,19 +8,46 @@ import Navbar from "./components/Navbar";
 import Banner from "./components/Banner";
 import TicketSection from "./components/TicketSection";
 import Footer from "./components/Footer";
+import {
+  saveToLocalStorage,
+  loadFromLocalStorage,
+} from "./utils/localStorage";
 
 function App() {
-  const [tickets, setTickets] = useState(ticketsData);
-  const [taskStatus, setTaskStatus] = useState([]);
-  const [resolvedTasks, setResolvedTasks] = useState([]);
+  const [tickets, setTickets] = useState(() => {
+    return loadFromLocalStorage("tickets") || ticketsData;
+  });
+
+  const [taskStatus, setTaskStatus] = useState(() => {
+    return loadFromLocalStorage("taskStatus") || [];
+  });
+
+  const [resolvedTasks, setResolvedTasks] = useState(() => {
+    return loadFromLocalStorage("resolvedTasks") || [];
+  });
+
+  // Save to localStorage whenever state changes
+  useEffect(() => {
+    saveToLocalStorage("tickets", tickets);
+  }, [tickets]);
+
+  useEffect(() => {
+    saveToLocalStorage("taskStatus", taskStatus);
+  }, [taskStatus]);
+
+  useEffect(() => {
+    saveToLocalStorage("resolvedTasks", resolvedTasks);
+  }, [resolvedTasks]);
 
   const handleAddToTask = (ticket) => {
     const alreadyAdded = taskStatus.find((t) => t.id === ticket.id);
     if (alreadyAdded) return;
     setTaskStatus([...taskStatus, ticket]);
-    setTickets(tickets.map((t) =>
-      t.id === ticket.id ? { ...t, status: "in-progress" } : t
-    ));
+    setTickets(
+      tickets.map((t) =>
+        t.id === ticket.id ? { ...t, status: "in-progress" } : t
+      )
+    );
   };
 
   const handleComplete = (ticket) => {
