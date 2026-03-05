@@ -1,3 +1,11 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faXTwitter,
+  faLinkedin,
+  faFacebook,
+} from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+
 export default function Footer() {
   return (
     <footer className="bg-black text-white px-6 md:px-12 py-12">
@@ -48,11 +56,23 @@ export default function Footer() {
         {/* Social Links */}
         <div>
           <h3 className="font-semibold mb-4">Social Links</h3>
-          <ul className="flex flex-col gap-2 text-sm text-gray-400">
-            <li className="cursor-pointer hover:text-white">𝕏 @CS — Ticket System</li>
-            <li className="cursor-pointer hover:text-white">in @CS — Ticket System</li>
-            <li className="cursor-pointer hover:text-white">f @CS — Ticket System</li>
-            <li className="cursor-pointer hover:text-white">✉ support@cst.com</li>
+          <ul className="flex flex-col gap-3 text-sm text-gray-400">
+            <li className="cursor-pointer hover:text-white flex items-center gap-2">
+              <FontAwesomeIcon icon={faXTwitter} className="w-4 h-4" />
+              @CS — Ticket System
+            </li>
+            <li className="cursor-pointer hover:text-white flex items-center gap-2">
+              <FontAwesomeIcon icon={faLinkedin} className="w-4 h-4" />
+              @CS — Ticket System
+            </li>
+            <li className="cursor-pointer hover:text-white flex items-center gap-2">
+              <FontAwesomeIcon icon={faFacebook} className="w-4 h-4" />
+              @CS — Ticket System
+            </li>
+            <li className="cursor-pointer hover:text-white flex items-center gap-2">
+              <FontAwesomeIcon icon={faEnvelope} className="w-4 h-4" />
+              support@cst.com
+            </li>
           </ul>
         </div>
 
