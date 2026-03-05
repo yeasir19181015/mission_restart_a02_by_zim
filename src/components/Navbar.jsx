@@ -53,32 +53,34 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="md:hidden mt-4 flex flex-col gap-3">
-          <ul className="flex flex-col gap-3 text-sm text-gray-600 font-medium">
-            {["Home", "FAQ", "Changelog", "Blog", "Download", "Contact"].map(
-              (item) => (
-                <li
-                  key={item}
-                  className="cursor-pointer hover:text-gray-900 py-1 border-b border-gray-100"
-                  onClick={() => handleNavClick(item)}
-                >
-                  {item}
-                </li>
-              )
-            )}
-          </ul>
-          <button
-            className="w-full py-2 rounded-lg text-white text-sm font-semibold cursor-pointer mt-2"
-            style={{
-              background: "linear-gradient(135deg, #422AD5, #7C3AED)",
-            }}
-            onClick={() => handleNavClick("New Ticket")}
-          >
-            + New Ticket
-          </button>
-        </div>
-      )}
+      <div
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          menuOpen ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"
+        }`}
+      >
+        <ul className="flex flex-col gap-3 text-sm text-gray-600 font-medium">
+          {["Home", "FAQ", "Changelog", "Blog", "Download", "Contact"].map(
+            (item) => (
+              <li
+                key={item}
+                className="cursor-pointer hover:text-gray-900 py-1 border-b border-gray-100"
+                onClick={() => handleNavClick(item)}
+              >
+                {item}
+              </li>
+            )
+          )}
+        </ul>
+        <button
+          className="w-full py-2 rounded-lg text-white text-sm font-semibold cursor-pointer  mt-2"
+          style={{
+            background: "linear-gradient(135deg, #422AD5, #7C3AED)",
+          }}
+          onClick={() => handleNavClick("New Ticket")}
+        >
+          + New Ticket
+        </button>
+      </div>
     </nav>
   );
 }
