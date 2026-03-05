@@ -125,7 +125,4 @@ In React, events are handled using camelCase event attributes directly on JSX el
 React wraps native browser events in a **SyntheticEvent** object, which ensures consistent behavior across all browsers.
 
 ---
-<<<<<<< HEAD
 
-=======
->>>>>>> 51efc44a0b28755d09157a1b9c8d7fbebab7b88f
