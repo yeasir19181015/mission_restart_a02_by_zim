@@ -7,7 +7,7 @@ export default function TaskStatus({ taskStatus, resolvedTasks, onComplete }) {
   };
 
   return (
-    <div className="w-72 shrink-0">
+    <div className="w-full">
       {/* Task Status */}
       <h2 className="text-lg font-bold text-gray-900 mb-3">Task Status</h2>
 
