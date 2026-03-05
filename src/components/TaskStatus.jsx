@@ -28,7 +28,7 @@ export default function TaskStatus({ taskStatus, resolvedTasks, onComplete }) {
               <button
                 className="w-full py-2 rounded-lg text-white text-sm font-semibold cursor-pointer"
                 style={{
-                  background: "linear-gradient(135deg, #059669, #10B981)",
+                  background: "linear-gradient(135deg, #02A53B, #02A53B)",
                 }}
                 onClick={() => handleComplete(ticket)}
               >
